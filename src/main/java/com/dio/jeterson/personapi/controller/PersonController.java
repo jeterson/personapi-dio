@@ -9,7 +9,6 @@ import javax.validation.Valid;
 
 import com.dio.jeterson.personapi.dto.PersonDTO;
 import com.dio.jeterson.personapi.entity.Person;
-import com.dio.jeterson.personapi.mapper.PersonMapper;
 import com.dio.jeterson.personapi.services.PersonService;
 
 import org.springframework.beans.factory.annotation.Autowired;
