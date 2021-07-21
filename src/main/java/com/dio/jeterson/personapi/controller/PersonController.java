@@ -56,7 +56,7 @@ public class PersonController {
     @PutMapping("/{id}")
     @ResponseStatus(code = HttpStatus.OK)
     public PersonDTO update(@PathVariable Long id, @RequestBody @Valid PersonDTO dto) throws EntityNotFoundException{
-        return PersonDTO.toDTO(personService.save(dto.convertToPerson()));
+        return PersonDTO.toDTO(personService.updateById(id,dto.convertToPerson()));
     }
 
     @DeleteMapping("/{id}")
