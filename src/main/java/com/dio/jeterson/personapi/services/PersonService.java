@@ -32,8 +32,9 @@ public class PersonService {
 
 
     public Person updateById(Long id, Person person) {
-        Person aux = findById(id);
-        return save(aux);
+        findById(id);
+        person.setId(id);
+        return save(person);
 
     }
 
