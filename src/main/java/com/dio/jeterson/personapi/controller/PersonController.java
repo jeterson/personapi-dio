@@ -21,16 +21,18 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
+
+import lombok.AllArgsConstructor;
 
 
 @RestController
 @RequestMapping("/people/v1")
+@AllArgsConstructor(onConstructor = @__(@Autowired))
 public class PersonController {
     
-    @Autowired
+    
     private PersonService personService;
 
     
@@ -60,7 +62,7 @@ public class PersonController {
     }
 
     @DeleteMapping("/{id}")
-    @ResponseStatus(code = HttpStatus.OK)
+    @ResponseStatus(code = HttpStatus.NO_CONTENT)
     public void delete(@PathVariable Long id) {
         personService.delete(id);
     }
