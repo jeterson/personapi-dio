@@ -30,6 +30,14 @@ public class PersonService {
         return personRepository.findById(id).orElseThrow(() -> new EntityNotFoundException(Person.class, id));
     }
 
+
+    public Person updateById(Long id, Person person) {
+        findById(id);
+        person.setId(id);
+        return save(person);
+
+    }
+
     public void delete(Long id) {
         findById(id);
         personRepository.deleteById(id);
